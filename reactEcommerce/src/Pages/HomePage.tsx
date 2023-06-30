@@ -1,11 +1,13 @@
-import { ProductCard } from "../Components/ProductCard"
+
+import { ProductCard } from "../Components/ProductCard/ProductCard"
 import { products } from "../assets/Db/Products.db"
 
-export const MainPage = () => {
+export const HomePage = () => {
 
 return(
     <>
-    <div>polla</div>
+   
+     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> 
    {products.map((product)=>{
     return(
 
@@ -13,6 +15,7 @@ return(
         img={product.img} price={product.price} />
     )
    })}
+     </div> 
     
     </>
 )
