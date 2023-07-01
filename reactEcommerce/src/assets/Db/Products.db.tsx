@@ -3,41 +3,41 @@
 {name: "DarkSouls",
 id: 1,
 price: 1,
-img: "./img/dark-souls-cover.jpg"},
+img: "darkSoulsCover"},
 
 {name: "Diablo",
 id: 2,
 price: 100,
-img: "./img/diablo-cover.jpg"},
+img: "diabloCover"},
 
 {name: "Fallout",
 id: 3,
 price: 200,
-img: "./img/fallout-cover.jpg"},
+img: "falloutCover"},
 
 {name: "Doom",
 id: 4,
 price: 300,
-img: "./img/doom-cover.jpg"},
+img: "doomCover"},
 
 {name: "Mario",
 id: 5,
 price: 400,
-img: "./img/mario-cover.jpg"},
+img: "marioCover"},
 
 {name: "MonkeyIsland",
 id: 6,
 price: 500,
-img: "./img/monkey-island-cover.jpg"},
+img: "monkeyCover"},
 
 {name: "StreetFighter",
 id: 7,
 price: 600,
-img: "./img/street-fighter-cover.jpg"},
+img: "streetCover"},
 
 {name: "Zelda",
 id: 8,
 price: 1000,
-img: "./img/zelda-cover.jpg"},
+img: "zeldaCover"},
 
 ]

@@ -12,15 +12,11 @@ export const Header = () => {
 
       <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><Link to="/" className="nav-link px-2 link-secondary">Home</Link></li>
-        <li><Link to="login" className="nav-link px-2">Login</Link></li>
-        <li><Link to="#" className="nav-link px-2">Pricing</Link></li>
-        <li><Link to="#" className="nav-link px-2">FAQs</Link></li>
-        <li><Link to="/about" className="nav-link px-2">About</Link></li>
+       <li><Link to="card" className="nav-link px-2">Carrito</Link></li>
       </ul>
 
       <div className="col-md-3 text-end">
-        <button type="button" className="btn btn-outline-primary me-2">Login</button>
-        <button type="button" className="btn btn-primary">Sign-up</button>
+        <Link to="/login" className="btn btn-outline-primary me-2">Login</Link>
       </div>
     </header>
   </div>

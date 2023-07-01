@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { HomePage } from "../Pages/HomePage"
 import { Login } from "../Pages/Login"
 import { Layout } from "../Pages/Layout"
+import { Card } from "../Pages/Card"
 
 
 export const Router = () => {
@@ -13,8 +14,8 @@ export const Router = () => {
     <Route path="/" element={<Layout/>}>
     
     <Route index element={<HomePage/>}/>
-    <Route path="about" element={<Login/>}/>
     <Route path="login" element={<Login/>}/>
+    <Route path="card" element={<Card/>}/>
 
     </Route>
         
