@@ -1,9 +1,9 @@
 /*interface de datos entre la pagina principal y el carrito*/
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { products } from '../assets/Db/Products.db';
 import { CartItems, ShopContextValue, typeProps } from '../Types/Types';
 
-const ShopContext = createContext({});
+export const Shop = createContext<ShopContextValue | null>(null);
 
 export const Shopcontext = (props:typeProps) => {
 //crea el carrito vacio
@@ -19,37 +19,50 @@ for(let i = 0; i < products.length; i++ ){
 }
 
 return(
-    card
+card
 )
 } 
 
  const [card, setCard] = useState<CartItems>(getDefaultCard());
+ 
+ useEffect(() => {
+    
+  
+  }, [card])
+
 //la cantidad de objetos que hay en el carrito
 const getTotalItems = () => {
 
+
     let total = 0;
 
-for (let i = 0; i< card.lenght; i++ ) {
-
-total += card[i];
-}
+    for (const item in card) {
+        total += card[item];
+    }
 
 
     return total;
 }
 //agregar al carrito
-const addToCard = (id:any) => {
+const addToCard = (id:any): void => {
 
     setCard((prev) => ({...prev, [id]:prev[id]+1}))
 
 }
-    const contextValue: ShopContextValue = {card, addToCard};
+//remover del carrito
+const removeToCard = (id:any): void => {
 
+    setCard((prev) => ({...prev, [id]:prev[id]-1}))
+
+}
+
+    const contextValue: ShopContextValue = {card, addToCard, removeToCard, getTotalItems };
+    
 
   return (
 
     <>
-    <ShopContext.Provider value={contextValue}> {props.children} </ShopContext.Provider>
+    <Shop.Provider value={contextValue}> {props.children} </Shop.Provider>
     </>
   )
 }

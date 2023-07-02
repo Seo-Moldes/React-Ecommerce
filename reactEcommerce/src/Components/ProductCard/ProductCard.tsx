@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { Shopcontext } from "../../Context/Shopcontext";
+import { Shop } from "../../Context/Shopcontext";
 import * as allImages from "../../assets/img/Index"
 
 export const ProductCard = (props: any) => {
 
   const { id, name, price, img } = props;
 
-  // const shopContext = useContext(Shopcontext);
-  //   if (!shopContext){
-  //       return null;
-  //   }
-  //   const { addToCart } = shopContext;
-
+  const shopContext = useContext(Shop);
+  if (!shopContext){
+      return null;
+  }
+  const { addToCard, removeToCard } = shopContext;
+  
 
   return (
     <>
@@ -22,10 +22,11 @@ export const ProductCard = (props: any) => {
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button type="button" className="btn btn-sm btn-outline-secondary">Add to Card</button>
-                
+                <button onClick={() => {addToCard(id)(price)}} type="button" className="btn btn-sm btn-outline-secondary">+</button>
+                <button onClick={() => {removeToCard(id)(price)}} type="button" className="btn btn-sm btn-outline-secondary">-</button>
+
               </div>
-      <div>{price}</div>
+      <div>{ `${price} $`}</div>
 
             </div>
           </div>
