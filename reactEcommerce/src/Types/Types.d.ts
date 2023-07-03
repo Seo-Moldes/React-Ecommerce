@@ -9,7 +9,19 @@ export type CartItems = { [key: string]: number };
 export type ShopContextValue = {
 
     card: CartItems
-    addToCard: (id: any) => any
-    removeToCard: (id: any) => any
+    addToCard: (id: number) => void
+    removeToCard: (id: number) => void
     getTotalItems: () => number
+    addPrice: () => number
+
 }
+
+export interface CardImgProps {
+
+img: string;
+id: number;
+name: string
+price: number
+
+}
+

@@ -22,8 +22,8 @@ export const ProductCard = (props: any) => {
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button onClick={() => {addToCard(id)(price)}} type="button" className="btn btn-sm btn-outline-secondary">+</button>
-                <button onClick={() => {removeToCard(id)(price)}} type="button" className="btn btn-sm btn-outline-secondary">-</button>
+                <button onClick={() => {addToCard(id)}} type="button" className="btn btn-sm btn-outline-secondary">+</button>
+                <button onClick={() => {removeToCard(id)}} type="button" className="btn btn-sm btn-outline-secondary">-</button>
 
               </div>
       <div>{ `${price} $`}</div>

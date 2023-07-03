@@ -55,8 +55,30 @@ const removeToCard = (id:any): void => {
     setCard((prev) => ({...prev, [id]:prev[id]-1}))
 
 }
+//añadir precio al carrito
+const addPrice = () => {
+  let total = 0;
 
-    const contextValue: ShopContextValue = {card, addToCard, removeToCard, getTotalItems };
+for(let item in card){
+
+if(card[item]>0){
+  let itemInfo = products.find((product) => product.id.toString()== item)
+  total +=  card[item] * itemInfo!.price
+}
+}
+console.log(total)
+
+return total
+}
+
+useEffect(() => {
+
+  localStorage.setItem("carrito", JSON.stringify(card));
+  addPrice()
+
+}, [card])
+
+    const contextValue: ShopContextValue = {card, addToCard, removeToCard, getTotalItems, addPrice };
     
 
   return (
