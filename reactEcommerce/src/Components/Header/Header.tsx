@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import "./Header.css";
 
 export const Header = () => {
   return (
@@ -12,7 +13,7 @@ export const Header = () => {
 
       <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><Link to="/" className="nav-link px-2 link-secondary">Home</Link></li>
-       <li><Link to="card" className="nav-link px-2">Carrito</Link></li>
+       <li><Link to="card" className="nav-link px-2"><i className="bi bi-cart-fill cart-image"></i></Link></li>
       </ul>
 
       <div className="col-md-3 text-end">

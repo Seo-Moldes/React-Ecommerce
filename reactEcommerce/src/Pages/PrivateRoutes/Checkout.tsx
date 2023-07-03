@@ -1,6 +1,5 @@
 
 
-
 export const Checkout = () => {
     
   return (

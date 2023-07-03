@@ -1,0 +1,11 @@
+.cart-image {
+  
+    color: black;
+    font-size: 30px;
+    
+}
+
+.cart-image:hover {
+
+    color: green;
+}

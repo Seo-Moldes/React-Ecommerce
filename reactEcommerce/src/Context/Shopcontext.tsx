@@ -5,86 +5,81 @@ import { CartItems, ShopContextValue, typeProps } from '../Types/Types';
 
 export const Shop = createContext<ShopContextValue | null>(null);
 
-export const Shopcontext = (props:typeProps) => {
-//crea el carrito vacio
-const getDefaultCard = ():CartItems => {
+export const Shopcontext = (props: typeProps) => {
+  //crea el carrito vacio
+  const getDefaultCard = (): CartItems => {
 
-let card: CartItems = {};
+    let card: CartItems = {};
 
-for(let i = 0; i < products.length; i++ ){
+    for (let i = 0; i < products.length; i++) {
 
-   const productId = products[i].id; 
-   card[productId] = 0;
+      const productId = products[i].id;
+      card[productId] = 0;
 
-}
+    }
 
-return(
-card
-)
-} 
+    return (
+      card
+    )
+  }
 
- const [card, setCard] = useState<CartItems>(getDefaultCard());
- 
- useEffect(() => {
-    
-  
-  }, [card])
+  const [card, setCard] = useState<CartItems>(getDefaultCard());
 
-//la cantidad de objetos que hay en el carrito
-const getTotalItems = () => {
+  //la cantidad de objetos que hay en el carrito
+  const getTotalItems = () => {
 
 
     let total = 0;
 
     for (const item in card) {
-        total += card[item];
+      total += card[item];
     }
 
 
     return total;
-}
-//agregar al carrito
-const addToCard = (id:any): void => {
+  }
+  //agregar al carrito
+  const addToCard = (id: any): void => {
 
-    setCard((prev) => ({...prev, [id]:prev[id]+1}))
+    setCard((prev) => ({ ...prev, [id]: prev[id] + 1 }))
 
-}
-//remover del carrito
-const removeToCard = (id:any): void => {
+  }
+  //remover del carrito
+  const removeToCard = (id: any): void => {
 
-    setCard((prev) => ({...prev, [id]:prev[id]-1}))
+    setCard((prev) => ({ ...prev, [id]: prev[id] - 1 }))
 
-}
-//añadir precio al carrito
-const addPrice = () => {
-  let total = 0;
+  }
+  //añadir precio al carrito
+  const addPrice = () => {
+    let total = 0;
 
-for(let item in card){
+    for (let item in card) {
 
-if(card[item]>0){
-  let itemInfo = products.find((product) => product.id.toString()== item)
-  total +=  card[item] * itemInfo!.price
-}
-}
-console.log(total)
+      if (card[item] > 0) {
+        let itemInfo = products.find((product) => product.id.toString() == item)
+        total += card[item] * itemInfo!.price
+      }
+    }
+    console.log(total)
 
-return total
-}
+    return total
+  }
 
-useEffect(() => {
+  useEffect(() => {
 
-  localStorage.setItem("carrito", JSON.stringify(card));
-  addPrice()
+    localStorage.setItem("carrito", JSON.stringify(card));
+    addPrice()
 
-}, [card])
+  }, [card])
 
-    const contextValue: ShopContextValue = {card, addToCard, removeToCard, getTotalItems, addPrice };
-    
+  const contextValue: ShopContextValue = { card, addToCard, removeToCard, getTotalItems, addPrice };
+
 
   return (
 
     <>
-    <Shop.Provider value={contextValue}> {props.children} </Shop.Provider>
+      <Shop.Provider value={contextValue}> {props.children} </Shop.Provider>
     </>
   )
 }
