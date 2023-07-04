@@ -13,6 +13,9 @@ export const Login = () => {
     event.preventDefault()
     const found = users.find(obj => { return obj.email === email && obj.password === password })
     console.log(found)
+
+    localStorage.setItem("email", email)
+    
     if (found) {
       console.log("estas logeado")
     } else {
@@ -20,6 +23,7 @@ export const Login = () => {
     }
     console.log(email + ' ' + password)
   }
+  
 
   return (
     <>
@@ -48,7 +52,7 @@ export const Login = () => {
             <hr />
 
             <button onClick={handleSubmit} className="w-100 btn btn-primary btn-lg" type="submit">
-              Continue to checkout
+              Login
             </button>
           </form>
         </div>

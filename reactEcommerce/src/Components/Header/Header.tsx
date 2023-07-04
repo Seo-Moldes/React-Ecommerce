@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom"
 import "./Header.css";
+import { useContext, useEffect, useState } from "react";
+import { Shop } from "../../Context/Shopcontext";
 
 export const Header = () => {
+  const shopContext = useContext(Shop);
+  if (!shopContext) {
+    return null;
+  }
+  const [item, setitem] = useState(0);
+  
+  const { getTotalItems, card } = shopContext;
+
+useEffect(() => {
+  
+setitem(getTotalItems())
+ 
+}, [card])
+
   return (
     <>
    <div className="container">
@@ -13,7 +29,7 @@ export const Header = () => {
 
       <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><Link to="/" className="nav-link px-2 link-secondary">Home</Link></li>
-       <li><Link to="card" className="nav-link px-2"><i className="bi bi-cart-fill cart-image"></i></Link></li>
+       <li><Link to="card" className="nav-link px-2"><i className="bi bi-cart-fill cart-image"><span className="cart-number">{(item === 0) ? '':(item)}</span></i></Link></li>
       </ul>
 
       <div className="col-md-3 text-end">

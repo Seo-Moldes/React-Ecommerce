@@ -45,7 +45,7 @@ setprice(addPrice())
 
 <div>{price}</div>
 
-<button><Link to="/checkout">Checkout</Link></button>
+<button><Link to="/checkout" >Checkout({items})</Link></button>
 
     </>
 
