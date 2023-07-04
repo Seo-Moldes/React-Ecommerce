@@ -6,6 +6,8 @@ export { default as marioCover } from './mario-cover.jpg';
 export { default as monkeyCover } from './monkey-island-cover.jpg';
 export { default as streetCover } from './street-fighter-cover.jpg';
 export { default as zeldaCover } from './zelda-cover.jpg';
+export { default as stopImage } from './stop-circle-symbol.jpg';
+
 
 
 

@@ -5,3 +5,30 @@
     margin: 0;
     font-family: 'Press Start 2P', cursive;
   }
+
+  body {
+   
+    display: grid;
+    max-width: 1300px;
+    margin: 0 auto;
+    /* background-image: url("assets/img/diablo-cover.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   */
+  }
+
+  .stop-page {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    align-content: space-around;
+    justify-content: center;
+    justify-items: center;
+    min-height: 70vh;
+  }
+
+  .input-group {
+
+    flex-direction: column-reverse;
+  }
+

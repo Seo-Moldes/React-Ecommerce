@@ -8,14 +8,22 @@ export const Shop = createContext<ShopContextValue | null>(null);
 export const Shopcontext = (props: typeProps) => {
   //crea el carrito vacio
   const getDefaultCard = (): CartItems => {
-
+  //guarda los productos del carrito en el localstorage
+    const storedCart = localStorage.getItem("cart");
     let card: CartItems = {};
 
-    for (let i = 0; i < products.length; i++) {
+    if (storedCart) {
+      card = JSON.parse(storedCart)
 
-      const productId = products[i].id;
-      card[productId] = 0;
+    } else {
 
+      card = {}
+      for (let i = 0; i < products.length; i++) {
+
+        const productId = products[i].id;
+        card[productId] = 0;
+
+      }
     }
 
     return (
@@ -68,7 +76,7 @@ export const Shopcontext = (props: typeProps) => {
 
   useEffect(() => {
 
-    localStorage.setItem("carrito", JSON.stringify(card));
+    localStorage.setItem("cart", JSON.stringify(card));
     addPrice()
 
   }, [card])

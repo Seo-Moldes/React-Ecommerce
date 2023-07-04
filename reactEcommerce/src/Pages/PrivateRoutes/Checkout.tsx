@@ -1,5 +1,5 @@
 
-
+/*pagina checkout*/
 export const Checkout = () => {
     
   return (

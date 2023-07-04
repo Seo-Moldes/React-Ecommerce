@@ -20,7 +20,7 @@ export interface CardImgProps {
 
 img: string;
 id: number;
-name: string
+name: string;
 price: number
 
 }

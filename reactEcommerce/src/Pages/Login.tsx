@@ -1,7 +1,8 @@
+//página login//
 import { useState } from "react";
 import { users } from "../assets/Db/Users";
 
-
+//login/logout//
 export const Login = () => {
 
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ export const Login = () => {
     console.log(email + ' ' + password)
   }
   
-
+//crea el formulario del login//
   return (
     <>
 

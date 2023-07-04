@@ -1,5 +1,6 @@
+/*archivos de barril*/
 export * from "./HomePage";
-export * from "./Card";
+export * from "./Cart";
 export * from "./Layout";
 export * from "./Login";
 export * from "./PrivateRoutes/Checkout";

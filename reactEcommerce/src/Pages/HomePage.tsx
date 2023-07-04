@@ -1,3 +1,4 @@
+/*página principal*/
 import { ProductCard } from "../Components/ProductCard/ProductCard"
 import { products } from "../assets/Db/Products.db"
 

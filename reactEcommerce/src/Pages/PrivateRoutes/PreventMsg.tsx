@@ -1,3 +1,5 @@
+/*navegacion de rutas privadas*/
+
 import { useContext } from "react";
 import { Shop } from "../../Context/Shopcontext";
 import { Navigate, Outlet } from "react-router-dom";
