@@ -15,7 +15,7 @@ export const Router = () => {
           {/*rutas protegidas*/}
           <Route path='/privateMsg' element={<WarningMsg />} />
           <Route path="/checkout" element={<PreventMsg />}>   
-            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/checkout" element={<Checkout img={""} id={0} name={""} price={0} />} />
           </Route>
 
 
