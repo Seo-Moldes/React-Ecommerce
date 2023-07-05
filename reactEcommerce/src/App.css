@@ -11,11 +11,11 @@
     display: grid;
     max-width: 1300px;
     margin: 0 auto;
-    /* background-image: url("assets/img/diablo-cover.jpg");
+    /* background-image: url("assets/img/pacman.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-   */
+    background-size: cover; */
+   
   }
 
   .stop-page {
@@ -37,4 +37,26 @@
   font-size: 11px;
  }
   
+ .header {
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  background-color: red;
+ }
 
+ .footer {
+
+  display: grid;
+  grid-template-columns: 75% 25%;
+  background-color: red;
+ }
+
+ .polla {
+
+  background-color: red;
+ }
+
+ .polla1 {
+  background-color: red;
+ }
+
+ 

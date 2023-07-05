@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "./Header.css";
 import { useContext, useEffect, useState } from "react";
 import { Shop } from "../../Context/Shopcontext";
+import { retroGames } from "../../assets/img/Index";
 
 /*muestra la cantidad de productos del carrito*/
 export const Header = () => {
@@ -11,41 +12,42 @@ export const Header = () => {
     return null;
   }
   const [item, setitem] = useState(0);
-  
+
   const { getTotalItems, card, loged, setloged } = shopContext;
 
-useEffect(() => {
-  
-setitem(getTotalItems())
- 
-}, [card])
-//logout
-const logout = () => {
+  useEffect(() => {
 
-setloged(false);
+    setitem(getTotalItems())
 
-}
+  }, [card])
+  //logout
+  const logout = () => {
 
-/*muestra botones y carrito del header*/
+    setloged(false);
+
+  }
+
+  /*muestra botones y carrito del header*/
   return (
     <>
-   <header className="container">
-    <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <div className="col-md-3 mb-2 mb-md-0">
-        <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
-        </a>
-      </div>
+      <header className="">
+        <div className="">
+          <div className="">
+            <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
+            </a>
+          </div>
 
-      <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><Link to="/" className="nav-link px-2 link-secondary">Home</Link></li>
-       <li><Link to="cart" className="nav-link px-2"><i className="bi bi-cart-fill cart-image"><span className="cart-number">{(item === 0) ? '':(item)}</span></i></Link></li>
-      </ul>
+          <ul className="header list-group border-0 mb-4">
+            <li className="d-flex col list-group-item border-0 justify-content-center align-items-center polla"><Link to="/" className="d-flex nav-link px-2 link-secondary fs-4">Home</Link></li>
+            <li className="d-flex border-0 justify-content-center"><img className="d-flex w-25" src={retroGames} alt="" /></li>
+            <li className="d-flex col list-group-item border-0 justify-content-center align-items-center polla1"><Link to="cart" className="nav-link px-2 col"><i className="bi bi-cart-fill cart-image fs-1">
+            <span className="cart-number">{(item === 0) ? '' : (item)}</span></i></Link> {(loged === true) ? (<button onClick={logout}>Logout</button>) : (<Link to="/login" className="btn btn-outline-primary me-2">Login</Link>)} </li>
 
-      <div className="col-md-3 text-end">
-        {(loged === true) ? (<button onClick={logout}>Logout</button>): (<Link to="/login" className="btn btn-outline-primary me-2">Login</Link>)}
-      </div>
-    </div>
-  </header>
-  </>
+
+          </ul>
+
+        </div>
+      </header>
+    </>
   )
 }

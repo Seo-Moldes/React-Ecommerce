@@ -7,6 +7,12 @@ export { default as monkeyCover } from './monkey-island-cover.jpg';
 export { default as streetCover } from './street-fighter-cover.jpg';
 export { default as zeldaCover } from './zelda-cover.jpg';
 export { default as stopImage } from './stop-circle-symbol.jpg';
+export { default as retroGames } from './retro .png';
+export { default as pixel } from './pxfuel.jpg';
+export { default as pacman } from './pacman.png';
+
+
+
 
 
 
