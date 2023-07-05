@@ -12,13 +12,19 @@ export const Header = () => {
   }
   const [item, setitem] = useState(0);
   
-  const { getTotalItems, card } = shopContext;
+  const { getTotalItems, card, loged, setloged } = shopContext;
 
 useEffect(() => {
   
 setitem(getTotalItems())
  
 }, [card])
+//logout
+const logout = () => {
+
+setloged(false);
+
+}
 
 /*muestra botones y carrito del header*/
   return (
@@ -36,7 +42,7 @@ setitem(getTotalItems())
       </ul>
 
       <div className="col-md-3 text-end">
-        <Link to="/login" className="btn btn-outline-primary me-2">Login</Link>
+        {(loged === true) ? (<button onClick={logout}>Logout</button>): (<Link to="/login" className="btn btn-outline-primary me-2">Login</Link>)}
       </div>
     </div>
   </header>

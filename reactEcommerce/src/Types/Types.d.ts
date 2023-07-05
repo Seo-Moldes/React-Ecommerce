@@ -13,6 +13,8 @@ export type ShopContextValue = {
     removeToCard: (id: number) => void
     getTotalItems: () => number
     addPrice: () => number
+    loged: boolean
+    setloged: (id:boolean) => void
 
 }
 
@@ -22,6 +24,7 @@ img: string;
 id: number;
 name: string;
 price: number
+
 
 }
 

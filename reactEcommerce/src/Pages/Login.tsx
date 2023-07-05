@@ -1,6 +1,7 @@
 //página login//
-import { useState } from "react";
+import { useState, useContext } from 'react';
 import { users } from "../assets/Db/Users";
+import { Shop } from "../Context/Shopcontext";
 
 //login/logout//
 export const Login = () => {
@@ -9,23 +10,33 @@ export const Login = () => {
   const [password, setPassword] = useState("");
 
 
-  function handleSubmit  (event:any)  {
+  function handleSubmit(event: any) {
 
     event.preventDefault()
     const found = users.find(obj => { return obj.email === email && obj.password === password })
     console.log(found)
 
     localStorage.setItem("email", email)
-    
+
     if (found) {
-      console.log("estas logeado")
+
+      setloged(true)
+
     } else {
-      console.log("usuario no encontrado")
+
     }
-    console.log(email + ' ' + password)
+
   }
-  
-//crea el formulario del login//
+  const shopContext = useContext(Shop);
+
+  if (!shopContext) {
+
+    return null;
+  }
+  const { setloged } = shopContext;
+
+
+  //crea el formulario del login//
   return (
     <>
 

@@ -55,7 +55,7 @@ export const Shopcontext = (props: typeProps) => {
   //remover del carrito
   const removeToCard = (id: any): void => {
 
-    setCard((prev) => ({ ...prev, [id]: prev[id] - 1 }))
+    setCard((prev) => ({ ...prev, [id]: prev[id] = 0 }))
 
   }
   //añadir precio al carrito
@@ -81,8 +81,10 @@ export const Shopcontext = (props: typeProps) => {
 
   }, [card])
 
-  const contextValue: ShopContextValue = { card, addToCard, removeToCard, getTotalItems, addPrice };
+  const [loged, setloged] = useState(false);
 
+  const contextValue: ShopContextValue = { card, addToCard, removeToCard, getTotalItems, addPrice, loged, setloged };
+   
 
   return (
 
