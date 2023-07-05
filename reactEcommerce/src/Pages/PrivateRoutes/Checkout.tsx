@@ -1,67 +1,98 @@
+import { useContext, useEffect, useState } from "react";
 import { CardImgProps } from "../../Types/Types";
+import { products } from "../../assets/Db/Products.db";
+import { Shop } from "../../Context/Shopcontext";
+
+//codigo promocional
+const codes = [{
+  code: 'Assembler',
+  discount: 5
+  }]
 
 /*pagina checkout*/
-export const Checkout: React.FC<CardImgProps> = (props:any) => {
+export const Checkout: React.FC<CardImgProps> = () => {
+//discount detecta la escritura de texto en el imput
+  const [discount, setDiscount] = useState('')
+//acepteddiscount si fue aceptado el descuento
+  const [acceptedDiscount, setAcceptedDiscount] = useState('')
+//accepted si el codigo que se ha puesto es correcto
+  const [accepted, setAccepted] = useState(false)
 
-    const {price, items } = props;
-   console.log(price)
+  const shopContext = useContext(Shop);
+  if (!shopContext) {
+    return null;
+  }
+  const { card, getTotalItems, addPrice } = shopContext;
+//lee el valor que esta puesto el imput y
+// chequea cada uno de los valores qe esta en el arreglo de codigos
+//si encuentra los dos valores iguales aplica el descuento
+  const handleDiscount = ( event:any) => {
+    event.preventDefault();
+    codes.forEach((code) => {if (discount === code.code) {
+      
+      setAccepted(true)
+      setAcceptedDiscount(code.discount.toString())
+    }})
+  }
+
+  useEffect(() => {
+   
+  },[discount])
+
 
   return (
 <>
     <div className="container">
   <main>
     <div className="py-5 text-center">
-     
+
       <h2>Checkout form</h2>
     </div>
     <div className="row g-5">
       <div className="col-md-5 col-lg-4 order-md-last">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
           <span className="text-primary">Your cart</span>
-          <span className="badge bg-primary rounded-pill">{items}</span>
+          <span className="badge bg-primary rounded-pill">{getTotalItems()}</span>
         </h4>
         <ul className="list-group mb-3">
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Product name</h6>
-              <small className="text-body-secondary">Brief description</small>
-            </div>
-            <span className="text-body-secondary">$12</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Second product</h6>
-              <small className="text-body-secondary">Brief description</small>
-            </div>
-            <span className="text-body-secondary">$8</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Third item</h6>
-              <small className="text-body-secondary">Brief description</small>
-            </div>
-            <span className="text-body-secondary">$5</span>
-          </li>
+        {products.map((product) => {
+          if (card[product.id] !== 0) {
+            return (
+              <li className="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 className="my-0">{product.name}</h6>
+              </div>
+              <span className="text-body-secondary">{product.price}</span>
+            </li>
+            )
+          }}
+          )}
+
+
           <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
             <div className="text-success">
               <h6 className="my-0">Promo code</h6>
-              <small>EXAMPLECODE</small>
             </div>
-            <span className="text-success">−$5</span>
+            <span className="text-success">{(accepted) ? acceptedDiscount + '%' : '0%' }</span>
           </li>
           <li className="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>{price}</strong>
+            <span>Total </span>
+            {/*el 9 le dice implicitamente que es un numero*/}
+            <strong>{(accepted) ? (+(addPrice().toFixed(2)) - +(addPrice().toFixed(2)) * + acceptedDiscount / 100).toFixed(2) : addPrice().toFixed(2)}</strong>
+            
           </li>
         </ul>
         <form className="card p-2">
           <div className="input-group">
             <input
+              value={discount}
+              onChange={(e) => setDiscount(e.target.value)}
               type="text"
               className="form-control"
               placeholder="Promo code"
+              style={{width: '100%'}}
             />
-            <button type="submit" className="btn btn-secondary">
+            <button onClick={(e) => handleDiscount(e)} type="submit" className="btn btn-secondary">
               Redeem
             </button>
           </div>

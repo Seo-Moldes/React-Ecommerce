@@ -52,9 +52,25 @@ export const Cart: React.FC<CardImgProps> = () => {
             <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
 
             </li>
+            <ul className="list-group mb-3">
+              {products.map((product) => {
+          if (card[product.id] !== 0) {
+            return (
+              <li className="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 className="my-0">{product.name}</h6>
+
+              </div>
+              <span className="text-body-secondary">{product.price}$</span>
+            </li>
+            )
+          }}
+          )}
+          </ul>
             <li className="list-group-item d-flex justify-content-between">
               <span>Total</span>
-              <strong>{price} $</strong>
+              {/*redondea los decimales*/}
+              <strong>{price.toFixed(2)} $</strong>
             </li>
           </ul>
 
