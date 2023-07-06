@@ -34,7 +34,7 @@
     color: black;
   }
 
-  
+
   .footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -52,6 +52,8 @@
     transition: color 0.3s;
     background-color: black;
     border-radius: 10px;
+    font-size: 10px;
+    margin-right: 10px;
   }
 
   .button-add:hover {
@@ -66,39 +68,39 @@
 
   /*cart page*/
 
-  .price-color{
+  .price-color {
     color: black;
   }
 
   .number-color {
-    background-color: black !important; 
-    color: white !important; 
+    background-color: black !important;
+    color: white !important;
   }
 
   .input-group {
     display: flex;
     justify-content: center;
   }
-  
+
   .button-checkout {
-    background-color: black; 
-    border: none; 
-   
+    background-color: black;
+    border: none;
+
   }
-  
+
   .button-checkout .link-checkout {
-    color: white; 
-    text-decoration: none; 
+    color: white;
+    text-decoration: none;
   }
-  
+
   .button-checkout:hover {
-    background-color: white; 
+    background-color: white;
   }
-  
+
   .button-checkout:hover .link-checkout {
-    color: black; 
+    color: black;
   }
-  
+
   .amount-p {
 
     color: black;
@@ -115,27 +117,31 @@
     color: black;
   }
 
-/*login page*/
+  /*login page*/
+
+  .login-p {
+    color: black;
+  }
 
   .bin-paper {
-    background-color: black; 
-    color: white; 
-   
+    background-color: black;
+    color: white;
+
   }
-  
+
   .bin-paper i {
-    color: white; 
+    color: white;
   }
-  
+
   .bin-paper:hover {
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
   }
-  
+
   .bin-paper:hover i {
-    color: black; 
+    color: black;
   }
-  
+
   .card-p {
     color: black;
   }
@@ -151,14 +157,14 @@
   .button-lgn {
     background-color: black;
     color: white;
-  
+
   }
-  
+
   .button-lgn:hover {
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
   }
-  
+
   /*checkout page*/
 
   .check-p {
@@ -166,25 +172,23 @@
   }
 
   .redeem-button {
-    background-color: black; 
-    color: white; 
-    
+    background-color: black;
+    color: white;
+
   }
-  
+
   .redeem-button:hover {
-    background-color: gray; 
-    color: black; 
+    background-color: gray;
+    color: black;
   }
-  
+
   .button-check {
-    background-color: black; 
-    color: white; 
-    
+    background-color: black;
+    color: white;
+
   }
-  
+
   .button-check:hover {
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
   }
-  
-  

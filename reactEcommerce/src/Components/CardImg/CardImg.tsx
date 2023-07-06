@@ -18,8 +18,8 @@ export const CardImg: React.FC<CardImgProps> = (props) => {
 
   return (
     <>
-      <div className="w-100 align-items-start justify-content-around row row-cols-2 border order-primary mb-4 card-game">
-         <div className="d-flex col p-3">
+      <div className="w-100 align-items-start justify-content-around row row-cols-2 border order-primary mb-5 card-game">
+         <div className="d-flex col p-3 border-0">
         {/* as keyof typeof fuerza el tipado de img para avisar de que es una llave de image card*/}
         <img className="w-75" src={imageCard[img as keyof typeof imageCard]} />
         </div>

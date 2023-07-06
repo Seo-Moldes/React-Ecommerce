@@ -6,4 +6,6 @@ export * from "./Login";
 export * from "./PrivateRoutes/Checkout";
 export * from "./PrivateRoutes/PreventMsg";
 export * from "./PrivateRoutes/WarningMsg";
+export * from "./ThankYou";
+
 

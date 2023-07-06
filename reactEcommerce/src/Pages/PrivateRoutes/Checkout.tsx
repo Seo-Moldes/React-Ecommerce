@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { CardImgProps } from "../../Types/Types";
 import { products } from "../../assets/Db/Products.db";
 import { Shop } from "../../Context/Shopcontext";
+import { Link } from "react-router-dom";
+import { ThankYou } from "../ThankYou";
 
 //codigo promocional
 const codes = [{
@@ -26,7 +28,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
   /*lee el valor que esta puesto el imput y
   chequea cada uno de los valores qe esta en el arreglo de codigos
   si encuentra los dos valores iguales aplica el descuento*/
-  const handleDiscount = (event: React.MouseEvent<HTMLButtonElement>)  => {    
+  const handleDiscount = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     codes.forEach((code) => {
       if (discount === code.code) {
@@ -352,9 +354,11 @@ export const Checkout: React.FC<CardImgProps> = () => {
                   </div>
                 </div>
                 <hr className="my-4" />
-                <button className="w-100 btn btn-lg button-check" type="submit">
-                  Continue to checkout
-                </button>
+                <Link to="/thankyou">
+                  <button className="w-100 btn btn-lg button-check" type="submit">
+                    Continue to checkout
+                  </button>
+                </Link>
               </form>
             </div>
           </div>
