@@ -203,30 +203,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                       placeholder="Apartment or suite"
                     />
                   </div>
-                  <div className="col-md-5">
-                    <label htmlFor="country" className="form-label check-p">
-                      Country
-                    </label>
-                    <select className="form-select" id="country" required={true}>
-                      <option value="">Choose...</option>
-                      <option>United States</option>
-                    </select>
-                    <div className="invalid-feedback">
-                      Please select a valid country.
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <label htmlFor="state" className="form-label check-p">
-                      State
-                    </label>
-                    <select className="form-select" id="state" required={true}>
-                      <option value="">Choose...</option>
-                      <option>California</option>
-                    </select>
-                    <div className="invalid-feedback">
-                      Please provide a valid state.
-                    </div>
-                  </div>
+                 
                   <div className="col-md-3">
                     <label htmlFor="zip" className="form-label check-p">
                       Zip
