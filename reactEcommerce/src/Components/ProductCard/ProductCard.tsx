@@ -15,14 +15,14 @@ export const ProductCard = (props: any) => {
   /*muestra las imagenes de los productos y los botones para pasar al carrito*/
   return (
     <>
-      <div className="col col-md-3" id={id}>
+      <div className="col card-game" id={id}>
 
         <div className="card shadow-sm">
           <img src={allImages[img as keyof typeof allImages]} alt="" />
           <div className="card-body">
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex justify-content-between align-items-center g-2">
               <div className="btn-group">
-                <button onClick={() => { addToCard(id) }} type="button" className="btn btn-sm btn-outline-secondary ">Add to Cart</button>
+                <button onClick={() => { addToCard(id) }} type="button" className="btn btn-sm btn-outline-secondary button-add">Add to Cart</button>
               </div>
               <div className="div-price">{`${price} $`}</div>
             </div>

@@ -11,10 +11,7 @@
     display: grid;
     max-width: 1300px;
     margin: 0 auto;
-    /* background-image: url("assets/img/pacman.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
+    background-color: rgb(43, 40, 40);
    
   }
 
@@ -26,37 +23,92 @@
     justify-items: center;
     min-height: 70vh;
   }
-
-  .input-group {
-
-    flex-direction: column-reverse;
-  }
-
- .div-price {
-
-  font-size: 11px;
- }
   
  .header {
   display: grid;
   grid-template-columns: 25% auto 25%;
-  background-color: red;
+  background-color: rgb(70, 68, 68);
+  
+ } 
+
+/*header*/
+
+.footer {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+   border-radius: 10px; 
+   display: grid;
+   grid-template-columns: 75% 25%;
+   background-color: rgb(70, 68, 68);
+    
+  }
+
+  .home {
+
+  background-color: rgb(70, 68, 68);
+  
+ } 
+
+ .home-text {
+  color: black; 
+  transition: color 0.3s; 
+}
+
+.home-text:hover {
+  color: white; 
+}
+
+  .cart {
+  background-color:rgb(70, 68, 68);
  }
-
- .footer {
-
-  display: grid;
-  grid-template-columns: 75% 25%;
-  background-color: red;
- }
-
- .polla {
-
-  background-color: red;
- }
-
- .polla1 {
-  background-color: red;
- }
-
  
+ .card-game {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+  border-radius: 10px; 
+  background-color: rgb(70, 68, 68);
+
+ } 
+
+ .card-body {
+
+  background-color: rgb(70, 68, 68);
+ }
+  
+ .your-cart {
+  background-color: pink;
+ }
+
+ .login-text {
+  color: white; 
+  transition: color 0.3s;
+  background-color: black; 
+  border-radius: 10px;
+ 
+}
+
+.login-text:hover {
+  background-color: white;
+}
+
+/*footer*/
+.p-retro  {
+  color: black;
+}
+
+/*cards*/
+
+.button-add {
+  color: white; 
+  transition: color 0.3s;
+  background-color: black; 
+  border-radius: 10px;
+}
+
+.button-add:hover {
+  background-color: white;
+  color: black;
+}
+
+.div-price {
+  color: black;
+  font-size: 11px;
+}

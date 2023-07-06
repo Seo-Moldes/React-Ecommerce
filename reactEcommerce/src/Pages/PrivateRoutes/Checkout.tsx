@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { CardImgProps } from "../../Types/Types";
 import { products } from "../../assets/Db/Products.db";
 import { Shop } from "../../Context/Shopcontext";
@@ -55,7 +55,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                 {products.map((product) => {
                   if (card[product.id] !== 0) {
                     return (
-                      <li className="list-group-item d-flex justify-content-between lh-sm">
+                      <li key={product.id} className="list-group-item d-flex justify-content-between lh-sm">
                         <div>
                           <h6 className="my-0">{product.name}</h6>
                         </div>
