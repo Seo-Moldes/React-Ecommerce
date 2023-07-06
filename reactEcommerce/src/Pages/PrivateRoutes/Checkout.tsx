@@ -43,13 +43,13 @@ export const Checkout: React.FC<CardImgProps> = () => {
         <main>
           <div className="py-5 text-center">
 
-            <h2>Checkout form</h2>
+            <h2 className="check-p">Checkout form</h2>
           </div>
           <div className="row g-5">
             <div className="col-md-5 col-lg-4 order-md-last">
               <h4 className="d-flex justify-content-between align-items-center mb-3">
-                <span className="text-primary">Your cart</span>
-                <span className="badge bg-primary rounded-pill">{getTotalItems()}</span>
+                <span className="check-p">Your cart</span>
+                <span className="badge bg-primary rounded-pill number-color">{getTotalItems()}</span>
               </h4>
               <ul className="list-group mb-3">
                 {products.map((product) => {
@@ -57,9 +57,9 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     return (
                       <li key={product.id} className="list-group-item d-flex justify-content-between lh-sm">
                         <div>
-                          <h6 className="my-0">{product.name}</h6>
+                          <h6 className="my-0 check-p">{product.name}</h6>
                         </div>
-                        <span className="text-body-secondary">{product.price}$</span>
+                        <span className="check-p">{product.price}$</span>
                       </li>
                     )
                   }
@@ -68,10 +68,10 @@ export const Checkout: React.FC<CardImgProps> = () => {
 
                 <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
                   <div className="text-success">
-                    <h6 className="my-0">Promo code</h6>
+                    <h6 className="my-0 check-p">Promo code</h6>
                   </div>
                   {/*si es true entonces muestra el numero y el %*/}
-                  <span className="text-success">{(accepted) ? acceptedDiscount + '%' : '0%'}</span>
+                  <span className="text-success check-p">{(accepted) ? acceptedDiscount + '%' : '0%'}</span>
                 </li>
                 <li className="list-group-item d-flex justify-content-between">
                   <span>Total</span>
@@ -91,18 +91,18 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     placeholder="Promo code"
                     style={{ width: '100%' }}
                   />
-                  <button onClick={(e) => handleDiscount(e)} type="submit" className="btn btn-secondary">
+                  <button onClick={(e) => handleDiscount(e)} type="submit" className="btn btn-secondary redeem-button">
                     Redeem
                   </button>
                 </div>
               </form>
             </div>
             <div className="col-md-7 col-lg-8">
-              <h4 className="mb-3">Billing address</h4>
+              <h4 className="mb-3 check-p">Billing address</h4>
               <form className="needs-validation" noValidate={true}>
                 <div className="row g-3">
                   <div className="col-sm-6">
-                    <label htmlFor="firstName" className="form-label">
+                    <label htmlFor="firstName" className="form-label check-p">
                       First name
                     </label>
                     <input
@@ -118,7 +118,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-sm-6">
-                    <label htmlFor="lastName" className="form-label">
+                    <label htmlFor="lastName" className="form-label check-p">
                       Last name
                     </label>
                     <input
@@ -134,7 +134,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-12">
-                    <label htmlFor="username" className="form-label">
+                    <label htmlFor="username" className="form-label check-p">
                       Username
                     </label>
                     <div className="input-group has-validation">
@@ -152,8 +152,8 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-12">
-                    <label htmlFor="email" className="form-label">
-                      Email <span className="text-body-secondary">(Optional)</span>
+                    <label htmlFor="email" className="form-label check-p">
+                      Email <span className="check-p">(Optional)</span>
                     </label>
                     <input
                       type="email"
@@ -166,7 +166,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-12">
-                    <label htmlFor="address" className="form-label">
+                    <label htmlFor="address" className="form-label check-p">
                       Address
                     </label>
                     <input
@@ -181,9 +181,9 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-12">
-                    <label htmlFor="address2" className="form-label">
+                    <label htmlFor="address2" className="form-label check-p">
                       Address 2{" "}
-                      <span className="text-body-secondary">(Optional)</span>
+                      <span className="check-p">(Optional)</span>
                     </label>
                     <input
                       type="text"
@@ -193,7 +193,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     />
                   </div>
                   <div className="col-md-5">
-                    <label htmlFor="country" className="form-label">
+                    <label htmlFor="country" className="form-label check-p">
                       Country
                     </label>
                     <select className="form-select" id="country" required={true}>
@@ -205,7 +205,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="state" className="form-label">
+                    <label htmlFor="state" className="form-label check-p">
                       State
                     </label>
                     <select className="form-select" id="state" required={true}>
@@ -217,7 +217,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-md-3">
-                    <label htmlFor="zip" className="form-label">
+                    <label htmlFor="zip" className="form-label check-p">
                       Zip
                     </label>
                     <input
@@ -237,7 +237,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     className="form-check-input"
                     id="same-address"
                   />
-                  <label className="form-check-label" htmlFor="same-address">
+                  <label className="form-check-label check-p" htmlFor="same-address">
                     Shipping address is the same as my billing address
                   </label>
                 </div>
@@ -247,12 +247,12 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     className="form-check-input"
                     id="save-info"
                   />
-                  <label className="form-check-label" htmlFor="save-info">
+                  <label className="form-check-label check-p" htmlFor="save-info">
                     Save this information for next time
                   </label>
                 </div>
                 <hr className="my-4" />
-                <h4 className="mb-3">Payment</h4>
+                <h4 className="mb-3 check-p">Payment</h4>
                 <div className="my-3">
                   <div className="form-check">
                     <input
@@ -263,7 +263,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                       defaultChecked={true}
                       required={true}
                     />
-                    <label className="form-check-label" htmlFor="credit">
+                    <label className="form-check-label check-p" htmlFor="credit">
                       Credit card
                     </label>
                   </div>
@@ -275,7 +275,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                       className="form-check-input"
                       required={true}
                     />
-                    <label className="form-check-label" htmlFor="debit">
+                    <label className="form-check-label check-p" htmlFor="debit">
                       Debit card
                     </label>
                   </div>
@@ -287,14 +287,14 @@ export const Checkout: React.FC<CardImgProps> = () => {
                       className="form-check-input"
                       required={true}
                     />
-                    <label className="form-check-label" htmlFor="paypal">
+                    <label className="form-check-label check-p" htmlFor="paypal">
                       PayPal
                     </label>
                   </div>
                 </div>
                 <div className="row gy-3">
                   <div className="col-md-6">
-                    <label htmlFor="cc-name" className="form-label">
+                    <label htmlFor="cc-name" className="form-label check-p">
                       Name on card
                     </label>
                     <input
@@ -304,13 +304,13 @@ export const Checkout: React.FC<CardImgProps> = () => {
                       placeholder=""
                       required={true}
                     />
-                    <small className="text-body-secondary">
+                    <small className="check-p">
                       Full name as displayed on card
                     </small>
                     <div className="invalid-feedback">Name on card is required</div>
                   </div>
                   <div className="col-md-6">
-                    <label htmlFor="cc-number" className="form-label">
+                    <label htmlFor="cc-number" className="form-label check-p">
                       Credit card number
                     </label>
                     <input
@@ -325,7 +325,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     </div>
                   </div>
                   <div className="col-md-3">
-                    <label htmlFor="cc-expiration" className="form-label">
+                    <label htmlFor="cc-expiration" className="form-label check-p">
                       Expiration
                     </label>
                     <input
@@ -338,7 +338,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     <div className="invalid-feedback">Expiration date required</div>
                   </div>
                   <div className="col-md-3">
-                    <label htmlFor="cc-cvv" className="form-label">
+                    <label htmlFor="cc-cvv" className="form-label check-p">
                       CVV
                     </label>
                     <input
@@ -352,7 +352,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
                   </div>
                 </div>
                 <hr className="my-4" />
-                <button className="w-100 btn btn-primary btn-lg" type="submit">
+                <button className="w-100 btn btn-lg button-check" type="submit">
                   Continue to checkout
                 </button>
               </form>

@@ -6,7 +6,7 @@ export const WarningMsg = () => {
     <>
       <div className="stop-page">
         <img className="w-25" src={stopImage} />
-        <div className="mb-5">Put a product in the cart to continue</div>
+        <div className="mb-5 warning-p">Put a product in the cart to continue</div>
       </div>
     </>
   )

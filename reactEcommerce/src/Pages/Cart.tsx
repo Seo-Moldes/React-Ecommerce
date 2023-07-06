@@ -43,8 +43,8 @@ export const Cart: React.FC<CardImgProps> = () => {
           <ul className="list-group mb-3">
             <li className="list-group-item d-flex justify-content-center lh-sm">
               <div className="d-flex align-items-center gap-4 justify-content-around">
-              <span className="text-primary">Your cart</span>
-            <span className="badge bg-primary rounded-pill">{items}</span>
+              <span className="cart-color">Your cart</span>
+            <span className="badge bg-primary rounded-pill number-color">{items}</span>
               </div>
               <span className="text-body-secondary"></span>
             </li>
@@ -61,7 +61,7 @@ export const Cart: React.FC<CardImgProps> = () => {
                 <h6 className="my-0">{product.name}</h6>
 
               </div>
-              <span className="text-body-secondary">{product.price}$</span>
+              <span className="price-color">{product.price}$</span>
             </li>
             )
           }}
@@ -74,12 +74,11 @@ export const Cart: React.FC<CardImgProps> = () => {
             </li>
           </ul>
 
-          <form className="card p-2">
+          
             <div className="input-group">
-              <button><Link to="/checkout" >Checkout({items})</Link></button>
-
+              <button className="btn button-checkout"><Link className="link-checkout" to="/checkout" >Checkout({items})</Link></button>
             </div>
-          </form>
+        
         </div>
 
         {/*muestra las imagenes en la pagina del carrito*/}

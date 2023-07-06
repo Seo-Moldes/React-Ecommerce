@@ -41,7 +41,8 @@ export const Header = () => {
             <li className="d-flex col list-group-item border-0 justify-content-center align-items-center home"><Link to="/" className="d-flex nav-link px-2 fs-4 home-text">Home</Link></li>
             <li className="d-flex border-0 justify-content-center"><img className="d-flex w-25" src={retroGames} alt="" /></li>
             <li className="d-flex col list-group-item border-0 justify-content-center align-items-center cart"><Link to="cart" className="nav-link px-2 col"><i className="bi bi-cart-fill cart-image fs-1">
-            <span className="cart-number">{(item === 0) ? '' : (item)}</span></i></Link> {(loged === true) ? (<button onClick={logout}>Logout</button>) : (<Link to="/login" className="btn me-2 login-text">Login</Link>)} </li>
+              <span className="cart-number">{(item === 0) ? '' : (item)}</span></i></Link> {(loged === true) ? (<button className="btn me-2 button-logout" onClick={logout}>Logout</button>) :
+                (<Link to="/login" className="btn me-2 login-text">Login</Link>)} </li>
 
 
           </ul>

@@ -24,10 +24,10 @@ export const CardImg: React.FC<CardImgProps> = (props) => {
         <img className="w-75" src={imageCard[img as keyof typeof imageCard]} />
         </div>
         <div className="d-flex flex-column col justify-content-around p-5">
-        <p>Amount {card[id]}</p>
-        <p>{name}</p>
-        <p>{price} $</p>
-        <button onClick={() => removeToCard(id)} type="button" className="btn btn-outline-secondary">
+        <p className="card-p">Amount {card[id]}</p>
+        <p className="card-p">{name}</p>
+        <p className="card-p">{price} $</p>
+        <button onClick={() => removeToCard(id)} type="button" className="btn btn-outline-secondary bin-paper">
           <i className="bi bi-trash3-fill"></i>
           <span className="visually-hidden">Button</span>
         </button>

@@ -1,18 +1,18 @@
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-  *{
+  * {
     padding: 0;
     margin: 0;
     font-family: 'Press Start 2P', cursive;
   }
 
   body {
-   
+
     display: grid;
     max-width: 1300px;
     margin: 0 auto;
     background-color: rgb(43, 40, 40);
-   
+
   }
 
   .stop-page {
@@ -23,92 +23,168 @@
     justify-items: center;
     min-height: 70vh;
   }
-  
- .header {
-  display: grid;
-  grid-template-columns: 25% auto 25%;
-  background-color: rgb(70, 68, 68);
-  
- } 
 
-/*header*/
-
-.footer {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
-   border-radius: 10px; 
-   display: grid;
-   grid-template-columns: 75% 25%;
-   background-color: rgb(70, 68, 68);
-    
+  .warning-p {
+    color: black;
   }
 
-  .home {
 
-  background-color: rgb(70, 68, 68);
+  /*footer*/
+  .p-retro {
+    color: black;
+  }
+
   
- } 
+  .footer {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    background-color: rgb(70, 68, 68);
 
- .home-text {
-  color: black; 
-  transition: color 0.3s; 
-}
+  }
 
-.home-text:hover {
-  color: white; 
-}
 
-  .cart {
-  background-color:rgb(70, 68, 68);
- }
- 
- .card-game {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
-  border-radius: 10px; 
-  background-color: rgb(70, 68, 68);
+  /*cards*/
 
- } 
+  .button-add {
+    color: white;
+    transition: color 0.3s;
+    background-color: black;
+    border-radius: 10px;
+  }
 
- .card-body {
+  .button-add:hover {
+    background-color: white;
+    color: black;
+  }
 
-  background-color: rgb(70, 68, 68);
- }
+  .div-price {
+    color: black;
+    font-size: 11px;
+  }
+
+  /*cart page*/
+
+  .price-color{
+    color: black;
+  }
+
+  .number-color {
+    background-color: black !important; 
+    color: white !important; 
+  }
+
+  .input-group {
+    display: flex;
+    justify-content: center;
+  }
   
- .your-cart {
-  background-color: pink;
- }
+  .button-checkout {
+    background-color: black; 
+    border: none; 
+   
+  }
+  
+  .button-checkout .link-checkout {
+    color: white; 
+    text-decoration: none; 
+  }
+  
+  .button-checkout:hover {
+    background-color: white; 
+  }
+  
+  .button-checkout:hover .link-checkout {
+    color: black; 
+  }
+  
+  .amount-p {
 
- .login-text {
-  color: white; 
-  transition: color 0.3s;
-  background-color: black; 
-  border-radius: 10px;
- 
-}
+    color: black;
+  }
 
-.login-text:hover {
-  background-color: white;
-}
+  .name-p {
 
-/*footer*/
-.p-retro  {
-  color: black;
-}
+    color: black;
+  }
 
-/*cards*/
 
-.button-add {
-  color: white; 
-  transition: color 0.3s;
-  background-color: black; 
-  border-radius: 10px;
-}
+  .price-p {
 
-.button-add:hover {
-  background-color: white;
-  color: black;
-}
+    color: black;
+  }
 
-.div-price {
-  color: black;
-  font-size: 11px;
-}
+/*login page*/
+
+  .bin-paper {
+    background-color: black; 
+    color: white; 
+   
+  }
+  
+  .bin-paper i {
+    color: white; 
+  }
+  
+  .bin-paper:hover {
+    background-color: white; 
+    color: black; 
+  }
+  
+  .bin-paper:hover i {
+    color: black; 
+  }
+  
+  .card-p {
+    color: black;
+  }
+
+  .email-p {
+    color: black;
+  }
+
+  .pass-p {
+    color: black;
+  }
+
+  .button-lgn {
+    background-color: black;
+    color: white;
+  
+  }
+  
+  .button-lgn:hover {
+    background-color: white; 
+    color: black; 
+  }
+  
+  /*checkout page*/
+
+  .check-p {
+    color: black;
+  }
+
+  .redeem-button {
+    background-color: black; 
+    color: white; 
+    
+  }
+  
+  .redeem-button:hover {
+    background-color: gray; 
+    color: black; 
+  }
+  
+  .button-check {
+    background-color: black; 
+    color: white; 
+    
+  }
+  
+  .button-check:hover {
+    background-color: white; 
+    color: black; 
+  }
+  
+  
