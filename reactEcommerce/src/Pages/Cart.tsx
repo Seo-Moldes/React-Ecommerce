@@ -20,7 +20,7 @@ export const Cart: React.FC<CardImgProps> = () => {
 
     setItems(getTotalItems())
 
-  }, [items])
+  }, [card])
 
   const [price, setprice] = useState(0);
 
