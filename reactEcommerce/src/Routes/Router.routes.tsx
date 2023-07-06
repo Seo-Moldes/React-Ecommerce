@@ -17,9 +17,10 @@ export const Router = () => {
           <Route path="/thankyou" element={<ThankYou />} />
 
           {/*rutas protegidas*/}
+          {/*protected routes*/}
           <Route path='/privateMsg' element={<WarningMsg />} />
-          <Route path="/checkout" element={<PreventMsg />}>   
-          <Route path="/checkout" element={<Checkout img={""} id={0} name={""} price={0} />} />
+          <Route path="/checkout" element={<PreventMsg />}>
+            <Route path="/checkout" element={<Checkout img={""} id={0} name={""} price={0} />} />
 
           </Route>
 

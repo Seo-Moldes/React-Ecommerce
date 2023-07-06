@@ -6,18 +6,23 @@ import { Link } from "react-router-dom";
 import { ThankYou } from "../ThankYou";
 
 //codigo promocional
+//Promotional code
 const codes = [{
   code: 'Assembler',
   discount: 5
 }]
 
 /*pagina checkout*/
+/*checkout page*/
 export const Checkout: React.FC<CardImgProps> = () => {
   //discount detecta la escritura de texto en el imput
+  //discount detects the writing of text in the input
   const [discount, setDiscount] = useState('')
   //acepteddiscount si fue aceptado el descuento
+  //accepteddiscount if the discount was accepted
   const [acceptedDiscount, setAcceptedDiscount] = useState('')
   //accepted si el codigo que se ha puesto es correcto
+  //accepted if the code that has been placed is correct
   const [accepted, setAccepted] = useState(false)
 
   const shopContext = useContext(Shop);
@@ -28,6 +33,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
   /*lee el valor que esta puesto el imput y
   chequea cada uno de los valores qe esta en el arreglo de codigos
   si encuentra los dos valores iguales aplica el descuento*/
+  /* read the value that is set to the input and check each of the values that is in the array of codes if it finds the two equal values apply the discount */
   const handleDiscount = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     codes.forEach((code) => {
@@ -73,11 +79,13 @@ export const Checkout: React.FC<CardImgProps> = () => {
                     <h6 className="my-0 check-p">Promo code</h6>
                   </div>
                   {/*si es true entonces muestra el numero y el %*/}
+                  {/*if true then print number and %*/}
                   <span className="text-success check-p">{(accepted) ? acceptedDiscount + '%' : '0%'}</span>
                 </li>
                 <li className="list-group-item d-flex justify-content-between">
                   <span>Total</span>
                   {/*el + le dice implicitamente que es un numero*/}
+                  {/*the + implicitly tells it that it is a number*/}
                   <strong>{(accepted) ? (+(addPrice().toFixed(2)) - +(addPrice().toFixed(2)) * + acceptedDiscount / 100).toFixed(2) : addPrice().toFixed(2)}$</strong>
 
                 </li>
@@ -85,6 +93,7 @@ export const Checkout: React.FC<CardImgProps> = () => {
               <form className="card p-2">
                 <div className="input-group">
                   {/*input del descuento*/}
+                  {/*discount input*/}
                   <input
                     value={discount}
                     onChange={(e) => setDiscount(e.target.value)}

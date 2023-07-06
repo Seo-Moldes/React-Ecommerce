@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Shop } from "../../Context/Shopcontext";
 import * as allImages from "../../assets/img/Index"
 /*pasa los productos al carrito*/
+/* put the products in the cart */
 export const ProductCard = (props: any) => {
 
   const { id, price, img } = props;
@@ -13,6 +14,7 @@ export const ProductCard = (props: any) => {
   const { addToCard } = shopContext;
 
   /*muestra las imagenes de los productos y los botones para pasar al carrito*/
+  /*show the images of the products and the buttons to go to the cart*/
   return (
     <>
       <div className="col card-game" id={id}>

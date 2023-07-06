@@ -1,4 +1,5 @@
 /*página header*/
+/*page header*/
 import { Link } from "react-router-dom"
 import "./Header.css";
 import { useContext, useEffect, useState } from "react";
@@ -6,6 +7,7 @@ import { Shop } from "../../Context/Shopcontext";
 import { retroGames } from "../../assets/img/Index";
 
 /*muestra la cantidad de productos del carrito*/
+/* display the number of products in the cart */
 export const Header = () => {
   const shopContext = useContext(Shop);
   if (!shopContext) {
@@ -28,6 +30,7 @@ export const Header = () => {
   }
 
   /*muestra botones y carrito del header*/
+  /*show buttons and cart from header*/
   return (
     <>
       <header className="">

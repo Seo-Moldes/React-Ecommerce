@@ -29,22 +29,21 @@ export const Cart: React.FC<CardImgProps> = () => {
     setprice(addPrice())
   }, [card])
 
-  // const { name } = props;
-
   /*total del carrito*/
+  /* cart total */
   return (
 
     <>
       <div className="d-flex flex-row-reverse p-5 justify-content-around">
         <div className="w-25 m-5">
           <h4 className="d-flex justify-content-between align-items-center mb-3">
-         
+
           </h4>
           <ul className="list-group mb-3">
             <li className="list-group-item d-flex justify-content-center lh-sm">
               <div className="d-flex align-items-center gap-4 justify-content-around">
-              <span className="cart-color">Your cart</span>
-            <span className="badge bg-primary rounded-pill number-color">{items}</span>
+                <span className="cart-color">Your cart</span>
+                <span className="badge bg-primary rounded-pill number-color">{items}</span>
               </div>
               <span className="text-body-secondary"></span>
             </li>
@@ -54,34 +53,37 @@ export const Cart: React.FC<CardImgProps> = () => {
             </li>
             <ul className="list-group mb-3">
               {products.map((product) => {
-          if (card[product.id] !== 0) {
-            return (
-              <li className="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 className="my-0">{product.name}</h6>
+                if (card[product.id] !== 0) {
+                  return (
+                    <li className="list-group-item d-flex justify-content-between lh-sm">
+                      <div>
+                        <h6 className="my-0">{product.name}</h6>
 
-              </div>
-              <span className="price-color">{product.price}$</span>
-            </li>
-            )
-          }}
-          )}
-          </ul>
+                      </div>
+                      <span className="price-color">{product.price}$</span>
+                    </li>
+                  )
+                }
+              }
+              )}
+            </ul>
             <li className="list-group-item d-flex justify-content-between">
               <span>Total</span>
               {/*redondea los decimales*/}
+              {/*round decimal places*/}
               <strong>{price.toFixed(2)} $</strong>
             </li>
           </ul>
 
-          
-            <div className="input-group">
-              <button className="btn button-checkout"><Link className="link-checkout" to="/checkout" >Checkout({items})</Link></button>
-            </div>
-        
+
+          <div className="input-group">
+            <button className="btn button-checkout"><Link className="link-checkout" to="/checkout" >Checkout({items})</Link></button>
+          </div>
+
         </div>
 
         {/*muestra las imagenes en la pagina del carrito*/}
+        {/*show the images on the cart page*/}
         <div className="d-flex flex-column justify-content-start">{products.map((product) => {
           if (card[product.id] !== 0) {
             return (

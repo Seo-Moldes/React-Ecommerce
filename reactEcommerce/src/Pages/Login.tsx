@@ -1,4 +1,5 @@
 //página login//
+//page login//
 import { useState, useContext } from 'react';
 import { users } from "../assets/Db/Users";
 import { Shop } from "../Context/Shopcontext";
@@ -37,6 +38,7 @@ export const Login = () => {
 
 
   //crea el formulario del login//
+  //create the login form//
   return (
     <>
 

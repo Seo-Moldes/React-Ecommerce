@@ -14,16 +14,16 @@ export type ShopContextValue = {
     getTotalItems: () => number
     addPrice: () => number
     loged: boolean
-    setloged: (id:boolean) => void
+    setloged: (id: boolean) => void
 
 }
 
 export interface CardImgProps {
 
-img: string;
-id: number;
-name: string;
-price: number
+    img: string;
+    id: number;
+    name: string;
+    price: number
 
 }
 

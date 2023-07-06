@@ -1,4 +1,5 @@
 /*pagina para cuando no hay productos en el carrito*/
+/* page for when there are no products in the cart */
 import { stopImage } from "../../assets/img/Index"
 export const WarningMsg = () => {
 
