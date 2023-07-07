@@ -76,7 +76,6 @@ export const Shopcontext = (props: typeProps) => {
         total += card[item] * itemInfo!.price
       }
     }
-    console.log(total)
 
     return total
   }

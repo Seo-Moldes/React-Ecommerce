@@ -3,7 +3,7 @@ import { CardImgProps } from "../../Types/Types";
 import { products } from "../../assets/Db/Products.db";
 import { Shop } from "../../Context/Shopcontext";
 import { Link } from "react-router-dom";
-import { ThankYou } from "../ThankYou";
+
 
 //codigo promocional
 //Promotional code
