@@ -3,7 +3,9 @@ export type typeProps = {
     children: ReactNode;
 }
 
-export type CartItems = { [key: string]: number };
+export type CartItems = {
+    [key: string]: number
+};
 
 
 export type ShopContextValue = {
@@ -25,5 +27,13 @@ export interface CardImgProps {
     name: string;
     price: number
 
+}
+
+export type productProps = {
+
+    name: string
+    id: number;
+    price : number;
+    img: any
 }
 

@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { Shop } from "../../Context/Shopcontext";
 import * as allImages from "../../assets/img/Index"
+import { productProps } from '../../Types/Types';
 /*pasa los productos al carrito*/
 /* put the products in the cart */
-export const ProductCard = (props: any) => {
+export const ProductCard :React.FC<productProps> = (props) => {
 
   const { id, price, img } = props;
 
@@ -17,7 +18,8 @@ export const ProductCard = (props: any) => {
   /*show the images of the products and the buttons to go to the cart*/
   return (
     <>
-      <div className="col card-game" id={id}>
+     <div className="col card-game" id={id.toString()}>
+
 
         <div className="card shadow-sm">
           <img src={allImages[img as keyof typeof allImages]} alt="" />

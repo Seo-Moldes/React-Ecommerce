@@ -5,13 +5,13 @@ import { users } from "../assets/Db/Users";
 import { Shop } from "../Context/Shopcontext";
 
 //login/logout//
-export const Login = () => {
+export const Login: React.FC = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
 
-  function handleSubmit(event: any) {
+  function handleSubmit(event: React.FormEvent) {
 
     event.preventDefault()
     const found = users.find(obj => { return obj.email === email && obj.password === password })

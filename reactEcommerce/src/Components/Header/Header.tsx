@@ -8,7 +8,7 @@ import { retroGames } from "../../assets/img/Index";
 
 /*muestra la cantidad de productos del carrito*/
 /* display the number of products in the cart */
-export const Header = () => {
+export const Header: React.FC = () => {
   const shopContext = useContext(Shop);
   if (!shopContext) {
     return null;

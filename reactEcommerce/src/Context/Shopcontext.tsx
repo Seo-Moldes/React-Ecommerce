@@ -52,14 +52,14 @@ export const Shopcontext = (props: typeProps) => {
   }
   //agregar al carrito
   //add to cart
-  const addToCard = (id: any): void => {
+  const addToCard = (id: number): void => {
 
     setCard((prev) => ({ ...prev, [id]: prev[id] + 1 }))
 
   }
   //remover del carrito
   //remove from cart
-  const removeToCard = (id: any): void => {
+  const removeToCard = (id: number): void => {
 
     setCard((prev) => ({ ...prev, [id]: prev[id] = 0 }))
 

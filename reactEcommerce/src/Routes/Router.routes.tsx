@@ -15,7 +15,6 @@ export const Router = () => {
           <Route path="login" element={<Login />} />
           <Route path="cart" element={<Cart img={""} id={0} name={""} price={0} />} />
           <Route path="/thankyou" element={<ThankYou />} />
-
           {/*rutas protegidas*/}
           {/*protected routes*/}
           <Route path='/privateMsg' element={<WarningMsg />} />

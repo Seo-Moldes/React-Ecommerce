@@ -6,7 +6,7 @@ import { Shop } from "../../Context/Shopcontext";
 import { Navigate, Outlet } from "react-router-dom";
 
 
-export const PreventMsg = () => {
+export const PreventMsg: React.FC = () => {
 
   const shopContext = useContext(Shop);
   if (!shopContext) {

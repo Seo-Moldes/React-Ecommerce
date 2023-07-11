@@ -2,7 +2,7 @@
 //page footer//
 import { retroGames } from "../../assets/img/Index"
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <>
       <footer className=" py-4 my-4 border-top footer">

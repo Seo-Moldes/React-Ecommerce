@@ -5,7 +5,7 @@ import { Footer } from "../Components/Footer/Footer"
 import { Header } from "../Components/Header/Header"
 import { Shopcontext } from "../Context/Shopcontext"
 
-export const Layout = () => {
+export const Layout: React.FC = () => {
 
   return (
     <>

@@ -3,7 +3,7 @@
 import { ProductCard } from "../Components/ProductCard/ProductCard"
 import { products } from "../assets/Db/Products.db"
 
-export const HomePage = () => {
+export const HomePage: React.FC = () => {
 
   console.log(products);
   return (
